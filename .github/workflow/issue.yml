@@ -2,7 +2,7 @@ name: Intake → YAML PR
 
 on:
   issues:
-    types: [opened, edited, labeled]
+    types: [edited, labeled]
 
 permissions:
   contents: write
