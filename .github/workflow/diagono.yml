@@ -1,0 +1,14 @@
+name: Diagnose Intake Trigger
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+jobs:
+  log:
+    if: contains(github.event.issue.labels.*.name, 'intake')
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Labels: ${{ toJson(github.event.issue.labels.*.name) }}"
+          echo "Issue title: ${{ github.event.issue.title }}"
+          printf "Body:\n%s\n" "${{ github.event.issue.body }}"
