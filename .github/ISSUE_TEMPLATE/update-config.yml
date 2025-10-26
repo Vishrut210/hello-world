@@ -1,0 +1,33 @@
+name: "Update config YAML"
+description: "Add or update a key/value under a specific environment"
+title: "[config] <env>/<key>"
+labels: ["intake"]
+
+body:
+  - type: dropdown
+    id: env
+    attributes:
+      label: Environment
+      options: [dev, qa, prod]
+    validations: { required: true }
+
+  - type: input
+    id: key
+    attributes:
+      label: Key
+      placeholder: "threshold"
+    validations: { required: true }
+
+  - type: input
+    id: value
+    attributes:
+      label: Value
+      placeholder: "0.8"
+    validations: { required: true }
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why is this needed?
+      placeholder: "Tuning for model performance"
+    validations: { required: false }
