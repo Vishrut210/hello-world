@@ -1,0 +1,4 @@
+envs:
+  dev: {}
+  qa: {}
+  prod: {}
